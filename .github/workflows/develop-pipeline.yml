@@ -1,6 +1,8 @@
 name: develop-pipeline
 
 on:
+  push:
+    branches: [ 'develop' ]
   pull_request:
     branches: [ 'develop' ]
 
@@ -26,7 +28,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-
+    needs: [ 'tests' ]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

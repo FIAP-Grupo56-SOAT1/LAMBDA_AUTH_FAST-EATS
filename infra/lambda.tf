@@ -15,4 +15,10 @@ resource "aws_lambda_function" "lambda_authorizer" {
   timeout     = var.timeout
   memory_size = var.lambda_memory
 
+  environment {
+    variables = {
+      USER_POOL_ID : var.user_pool_id
+    }
+  }
+
 }

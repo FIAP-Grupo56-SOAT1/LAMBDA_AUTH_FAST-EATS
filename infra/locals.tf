@@ -3,6 +3,6 @@ locals {
     Project   = "Lambda Authorizer FIAP 56 with Terraform"
     CreatedAt = formatdate("YYYY-MM-DD", timestamp())
     ManagedBy = "Terraform"
-    Owner     = "Jairo Almires"
+    Owner     = "fiap56soat1"
   }
 }

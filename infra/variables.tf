@@ -45,3 +45,10 @@ variable "version_lambda" {
   default     = "1.0.0"
 }
 
+variable "user_pool_id" {
+  description = "user_pool_id"
+  type        = string
+  default     = "us-east-1_5AektK0sI"
+}
+
+

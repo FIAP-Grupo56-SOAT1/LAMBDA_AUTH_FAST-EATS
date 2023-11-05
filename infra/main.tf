@@ -8,7 +8,7 @@ terraform {
   }
   backend "s3" {
     bucket = "bucket-fiap-soat1-grupo56-remote-state"
-    key    = "aws-lambda-authorizer-fiap56/terraform.tfstate"
+    key    = "aws-lambda-authorizer-soat1-grupo56/terraform.tfstate"
     region = "us-east-1"
   }
 }
@@ -21,7 +21,7 @@ provider "aws" {
       Project   = "Lambda Authorizer FIAP 56 with Terraform"
       CreatedAt = formatdate("YYYY-MM-DD", timestamp())
       ManagedBy = "Terraform"
-      Owner     = "Jairo Almires"
+      Owner     = "fiap56soat1"
     }
   }
 }

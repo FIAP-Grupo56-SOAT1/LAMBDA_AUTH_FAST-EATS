@@ -12,7 +12,7 @@ variable "lambda_function_name" {
 variable "lambda_memory" {
   description = "Lambda max memory size"
   type        = number
-  default     = 128
+  default     = 256
 }
 
 variable "lambda_runtime" {
@@ -48,7 +48,7 @@ variable "version_lambda" {
 variable "user_pool_id" {
   description = "user_pool_id"
   type        = string
-  default     = "us-east-1_5AektK0sI"
+  default     = "us-east-1_l3fytM5Hz"
 }
 
 

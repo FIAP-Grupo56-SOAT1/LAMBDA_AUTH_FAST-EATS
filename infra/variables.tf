@@ -12,7 +12,7 @@ variable "lambda_function_name" {
 variable "lambda_memory" {
   description = "Lambda max memory size"
   type        = number
-  default     = 256
+  default     = 512
 }
 
 variable "lambda_runtime" {

@@ -36,7 +36,7 @@ variable "timeout" {
 variable "description" {
   description = "Descrição do lambda"
   type        = string
-  default     = "lambda para autorização de token - fiap 56"
+  default     = "lambda para autorização de token - fiap56"
 }
 
 variable "version_lambda" {

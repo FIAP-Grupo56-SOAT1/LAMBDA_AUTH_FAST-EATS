@@ -45,10 +45,10 @@ variable "version_lambda" {
   default     = "1.0.0"
 }
 
-variable "user_pool_id" {
-  description = "user_pool_id"
-  type        = string
-  default     = "us-east-1_l3fytM5Hz"
+######### OBS: a execution role acima foi trocada por LabRole devido a restricoes de permissao na conta da AWS Academy ########
+variable "lab_role_arn" {
+  type    = string
+  default = "arn:aws:iam::730335661438:role/LabRole" #aws_iam_role.ecsTaskExecutionRole.arn
 }
 
 

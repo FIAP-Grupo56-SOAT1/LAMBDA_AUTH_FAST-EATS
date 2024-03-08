@@ -11,20 +11,23 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class LambdaAuthorizer implements RequestHandler<APIGatewayProxyRequestEvent, Response> {
-
+    static Logger logger = Logger.getLogger(LambdaAuthorizer.class.getName());
     public Response handleRequest(APIGatewayProxyRequestEvent event, Context context) {
-        System.out.println("Request lambda authorizer:"+System.currentTimeMillis());
+        logger.info("Request lambda authorizer:"+System.currentTimeMillis());
         Map<String, String> headers = event.getHeaders();
         String authorizationToken = headers.get("Authorization");
-        System.out.println("Request lambda authorizer token:"+authorizationToken);
+        logger.info("Request lambda authorizer token:"+authorizationToken);
         String auth = "Deny";
         String sub = JWTUtil.getSub(authorizationToken);
         if (sub != null) {
 
             auth = "Allow";
-
+            logger.info("TOKEN OK");
+        }else{
+            logger.info("TOKEN INVALID");
         }
 
         Map<String, String> ctx = new HashMap<String, String>();

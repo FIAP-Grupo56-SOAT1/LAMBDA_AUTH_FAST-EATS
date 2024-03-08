@@ -1,4 +1,4 @@
-name: main-pipeline
+name: Compilar e fazer deploy em producao
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: 'gerando artefato'
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
@@ -29,11 +30,11 @@ jobs:
       - name: Upload Lambda JAR
         uses: actions/upload-artifact@v3
         with:
-          name: lambda-jar
+          name: lambda_authorizer
           path: ./app/target/lambda_authorizer-1.0.0.jar
 
   terraform:
     needs: [build]
     if: github.event.pull_request.merged == true
-    uses: ./.github/workflows/terraform.yml
+    uses: ./.github/workflows/deploy-producao.yml
     secrets: inherit

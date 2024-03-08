@@ -16,3 +16,4 @@
 /infra/plan.out
 /app/dependency-reduced-pom.xml
 /infra/pom.xml
+/app/lambda_authorizer.iml

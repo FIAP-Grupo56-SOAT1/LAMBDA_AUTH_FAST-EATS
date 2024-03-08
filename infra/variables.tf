@@ -12,7 +12,7 @@ variable "lambda_function_name" {
 variable "lambda_memory" {
   description = "Lambda max memory size"
   type        = number
-  default     = 128
+  default     = 512
 }
 
 variable "lambda_runtime" {
@@ -36,7 +36,7 @@ variable "timeout" {
 variable "description" {
   description = "Descrição do lambda"
   type        = string
-  default     = "lambda para autorização de token - fiap 56"
+  default     = "lambda para autorização de token - fiap56"
 }
 
 variable "version_lambda" {
@@ -45,10 +45,10 @@ variable "version_lambda" {
   default     = "1.0.0"
 }
 
-variable "user_pool_id" {
-  description = "user_pool_id"
-  type        = string
-  default     = "us-east-1_5AektK0sI"
+######### OBS: a execution role acima foi trocada por LabRole devido a restricoes de permissao na conta da AWS Academy ########
+variable "lab_role_arn" {
+  type    = string
+  default = "arn:aws:iam::730335661438:role/LabRole" #aws_iam_role.ecsTaskExecutionRole.arn
 }
 
 

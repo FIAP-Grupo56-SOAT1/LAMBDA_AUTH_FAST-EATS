@@ -30,7 +30,7 @@ jobs:
       - name: Upload Lambda JAR
         uses: actions/upload-artifact@v3
         with:
-          name: lambda_authorizer
+          name: lambda_authorizer_jar
           path: ./app/target/lambda_authorizer-1.0.0.jar
 
   terraform:

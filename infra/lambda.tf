@@ -2,6 +2,14 @@ locals {
   lambda_payload_filename = "../app/target/${var.lambda_function_name}-${var.version_lambda}.jar"
 }
 
+resource "aws_cloudwatch_log_group" "lambda_log_group" {
+  name              = "/aws/lambda/${aws_lambda_function.lambda_authorizer.function_name}"
+  retention_in_days = 1
+  lifecycle {
+    prevent_destroy = false
+  }
+}
+
 resource "aws_lambda_function" "lambda_authorizer" {
   function_name = var.lambda_function_name
   handler       = var.lambda_handler
